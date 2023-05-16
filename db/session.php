@@ -6,11 +6,11 @@ class Session{
 
     public function __construct(){
         session_start();
-        $this->checklogin();
+        $this->check_seslogin();
         
     }
 
-    public function checklogin(){
+    public function check_seslogin(){
         if(isset($_SESSION['id'])){
             $this->id = $_SESSION['id'];
             $this->signedin = true;

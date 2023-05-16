@@ -51,9 +51,7 @@ $pro = Product::findid($pro_id);
           );
           
         $cart->add_cart($item);
-        keep_succmsg('Successfully added to cart');
         redirect('index.php');
-        // header('location: index.php');
       }
 
         ?>

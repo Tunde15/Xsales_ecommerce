@@ -12,11 +12,6 @@ class Cart extends Users{
 
     public $count_cart;
 
-    public function __construct()
-    {
-        $this->tocount_cart();
-    }
-
     public function remove($id){
         foreach($_SESSION['cart'] as $keys=> $values){
             if($id == $values['id']){
@@ -28,6 +23,7 @@ class Cart extends Users{
     public function add_cart($item_array){
         if(!isset($_SESSION['cart'])){
             $_SESSION['cart'][] = $item_array;
+            keep_succmsg('Successfully added to cart');
         }
         else{
             if($this->tocheck_itemadded($item_array) == true){
@@ -35,6 +31,7 @@ class Cart extends Users{
             }
             else{
             $_SESSION['cart'][] = $item_array;
+            keep_succmsg('Successfully added to cart');
             }
 
         }
@@ -102,41 +99,4 @@ class Cart extends Users{
 }
 $cart = new Cart();
 
-
-
-
-
-
-
-      //   if(isset($_POST['add_cart'])){
-      //     $item = array(
-      //       'id' => $pro->id,
-      //       'name' => $pro->pro_name,
-      //       'price' =>$pro->pro_price
-      //     );
-        
-      //   if(!isset($_SESSION['cart'])){
-      //     $_SESSION['cart'][] = $item;
-          
-      //   $items = $_SESSION['cart'];
-      //   $count_cart =  count($items);
-      //   echo $_SESSION['coun'] = $count_cart;
-      //   }
-      //   else{
-      //     foreach($_SESSION['cart'] as $prod){
-      //       if($prod['id'] == $item['id']){
-      //       echo "item already added";
-      //       return;
-            
-      //     }
-      //   }
-      //   $_SESSION['cart'][] = $item;
-      //   $items = $_SESSION['cart'];
-      //   $count_cart =  count($items);
-      //   echo $_SESSION['coun'] = $count_cart;
-      //   }
-      // }
-      // foreach($_SESSION['cart'] as $product){
-      //   echo $product['name'];
-      // }
 ?>
