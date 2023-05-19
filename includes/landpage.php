@@ -1,3 +1,14 @@
+<?php
+if(!isset($_SESSION['load_once'])){
+$cookie = new Cookies();
+$cookie->check_cookie();
+$message = $cookie->check_visitstatus();
+//$cookie->user_check ? keep_succmsg($message) : keep_succmsg($message);
+keep_succmsg($message);
+
+$_SESSION['load_once'] = true;
+}
+?>
 <br><br>
 <div style="background-color: #e6f9ff; height: auto">
 <div class="container"><br><br>

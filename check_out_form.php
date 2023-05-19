@@ -18,9 +18,10 @@ if(isset($_POST['submit'])){
   }
   ?>
 <?php if(isset($_SESSION['succmsg'])) : ?>
-          <div class="alert alert-success text-center">
-            <strong><?php show_succmsg(); ?></strong>
-          </div>
+           <div class="alert alert-success text-center">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong><?php show_succmsg(); ?></strong>
+            </div>
 <?php endif; ?>
 <?php
 if($session->checksignin()){
@@ -128,7 +129,7 @@ if(isset($_POST['paySubmit'])){
           <div class="control-group form-group">
             <div class="controls">
               <label>Email:</label>
-              <input type="email" class="form-control" id="email" name="email" required  data-validation-required-message="Please enter your email." value="<?php echo $session->checksignin() ? $user_rec->user_email : '';?>">
+              <input type="email" class="form-control" id="email" name="stackEmail" required  data-validation-required-message="Please enter your email." value="<?php echo $session->checksignin() ? $user_rec->user_email : '';?>">
               <p class="help-block"></p>
             </div>
           </div>

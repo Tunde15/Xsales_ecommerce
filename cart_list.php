@@ -94,7 +94,7 @@ $results = $cart->findall_cart();
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header" style="padding:10px 10px;">
-            <h5><i class='fas fa-microphone-alt' style='font-size:36px'></i></h5>
+            <h5><i class='fas fa-volume-up' style='font-size:36px'></i></h5>
           </div>
           <div class="modal-body" style="padding:40px 50px;">
           <h4>Would you like to sign up for more features or continue as a guest</h4>

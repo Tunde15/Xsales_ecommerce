@@ -9,4 +9,5 @@ require('cart.php');
 require('order.php');
 require('paginate.php');
 require('payment.php');
+require_once('cookies.php');
 ?>
