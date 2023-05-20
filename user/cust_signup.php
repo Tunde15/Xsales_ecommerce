@@ -8,9 +8,9 @@ include('includes/nav.php');
 $user = new Users();
 if(isset($_POST['submit'])){
     $name  = trim($_POST['name']);
-    $email = $_POST['email'];
+    $email = val_eml($_POST['email']);
     $adrs  = $_POST['adrs'];
-    $pass  = md5($_POST['password']);
+    $pass  = hashpass($_POST['password']);
 
     $user->user_name      = $name;
     $user->user_email     = $email;

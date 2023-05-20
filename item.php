@@ -38,7 +38,7 @@ $pro = Product::findid($pro_id);
         <?php
 
       if(isset($_POST['add_cart'])){
-        $pro_qty = $_POST['prod_qty'];
+        $pro_qty = val_int($_POST['prod_qty']);
 
            $item = array(
             'id'           => $pro->id,

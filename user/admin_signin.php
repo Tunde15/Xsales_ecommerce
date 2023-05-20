@@ -11,10 +11,11 @@ if($session->checksignin()){
 
  
 if(isset($_POST['submit'])){
-  $eml = $_POST['email'];
-  $psw = $_POST['password'];
-  $pass = md5($psw);
+  $eml     = $_POST['email'];
+  $psw     = $_POST['password'];
+  $pass    = hashpass($psw);
   $userrec = Users::verifyuser($eml, $pass);
+  
   if($userrec){
     $_SESSION['id'] = $userrec->id;
     $session->login($userrec);

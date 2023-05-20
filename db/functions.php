@@ -26,4 +26,20 @@ function show_failmsg(){
     }
 }
 
+function hashpass($pass){
+    return md5($pass);
+}
+
+function val_eml($eml){
+    return filter_var($eml, FILTER_VALIDATE_EMAIL);
+}
+
+function val_int($int){
+    return filter_var($int, FILTER_VALIDATE_INT);
+}
+
+function val_str($str){
+    return filter_var($str, FILTER_SANITIZE_STRING);
+}
+
 ?>

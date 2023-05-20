@@ -8,7 +8,7 @@ $order = new Order();
   <?php
 if(isset($_POST['submit'])){
   $order->name       = $_POST['name'];
-  $order->email      = $_POST['email'];
+  $order->email      = val_eml($_POST['email']);
   $order->address    = $_POST['adr'];
   $order->order_date = date('Y/m/d');
 
@@ -54,28 +54,6 @@ if(isset($_POST['paySubmit'])){
   }
   header('Location: ' . $tranx['data']['authorization_url']);
 }
-    //  $curl = curl_init();
-    //  $email;
-    //  $amount;
-    //  $id;
-    //  $callback_url = 'dashboard/oop_project/xsales_ecommerce/index.php';
-
-    //  curl_setopt_array($curl, array(
-    //     CURLOPT_URL => 'https://api.paystack.co/transaction/initialize',
-    //     CURLOPT_RETURNTRANSFER => true,
-    //     CURLOPT_CUSTOMREQUEST => 'POST',
-    //     CURLOPT_POSTFIELDS => json_encode([
-    //         'amount' => $this->amount,
-    //         'email' => $this->email,
-    //         'callback_url' => $this->$callback_url
-    //     ]),
-    //     CURLOPT_HTTPHEADER => [
-    //         'authorization: Bearer test',
-    //         'content-type: application/json',
-    //         'cache-control: no-cache'
-    // ],
-    // ));
-
 ?>
 <div class="row">
       <div class="col-lg-2 mb-4">
